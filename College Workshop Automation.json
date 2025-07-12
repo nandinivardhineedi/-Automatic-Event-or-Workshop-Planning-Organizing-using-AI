@@ -1,0 +1,1085 @@
+{
+  "name": "College Workshop Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "workshop-approval",
+        "options": {}
+      },
+      "id": "21aaef4d-2fcf-418e-9f17-a3b7d15ae322",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -4140,
+        -620
+      ],
+      "webhookId": "0c1ee435-1fa6-424c-a576-deb02cebbd48"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1DmYtFkQs6T3PPyPsLrVcEaM6JuL2k-DBKPJkZtU_UoE",
+          "mode": "list",
+          "cachedResultName": "WorkshopDetails",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1DmYtFkQs6T3PPyPsLrVcEaM6JuL2k-DBKPJkZtU_UoE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1DmYtFkQs6T3PPyPsLrVcEaM6JuL2k-DBKPJkZtU_UoE/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Workshop_Title": "AI Automation",
+            "Organizer_Name": "Vardhineedi Nandini",
+            " Organizer_Email": "usersasi67@gmail.com",
+            "Workshop_Date": "10-07-2025",
+            "Workshop_Time": "9:00 AM - 4:00 PM",
+            "Workshop_Venue": "Block1, Lab 23203",
+            "Workshop_Objective": "to begin awareness about new Technology",
+            "Workshop_Department": "CIC",
+            "Workshop_Speaker": "Narayani, Sr Developer, Autodesk",
+            "ur_place": "Tadepalligudem",
+            "College_Name": "SITE",
+            "Workshop_Speaker_Email": "nandini.vardhineedi@sasi.ac.in"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Workshop_Title",
+              "displayName": "Workshop_Title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Workshop_Date",
+              "displayName": "Workshop_Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Workshop_Time",
+              "displayName": "Workshop_Time",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Workshop_Venue",
+              "displayName": "Workshop_Venue",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Workshop_Objective",
+              "displayName": "Workshop_Objective",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Workshop_Department",
+              "displayName": "Workshop_Department",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Workshop_Speaker",
+              "displayName": "Workshop_Speaker",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Workshop_Speaker_Email",
+              "displayName": "Workshop_Speaker_Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Organizer_Name",
+              "displayName": "Organizer_Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": " Organizer_Email",
+              "displayName": " Organizer_Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ur_place",
+              "displayName": "ur_place",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "College_Name",
+              "displayName": "College_Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "ecb20c96-9966-4cc3-942f-9b10ca19b75f",
+      "name": "Workshop_Details",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -3880,
+        -620
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "abJKFSlmwtfA9dua",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "https://docs.google.com/document/d/1Gqb160b6xM17HVhOUZF6Oxa0vhGQ0cPCh0Odunl02rY/edit",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "object": "=text",
+              "action": "insert",
+              "text": "={{ $json.Workshop_Title }}",
+              "index": 0
+            },
+            {
+              "object": "=text",
+              "action": "insert",
+              "text": "={{ $json.Organizer_Name }}",
+              "index": 0
+            },
+            {
+              "object": "=text",
+              "action": "insert",
+              "text": "={{ $json[\" Organizer_Email\"] }}",
+              "index": 0
+            },
+            {
+              "object": "=text",
+              "action": "insert",
+              "text": "={{ $json.Workshop_Date }}",
+              "index": 0
+            },
+            {
+              "object": "=text",
+              "action": "insert",
+              "text": "={{ $json.Workshop_Time }}",
+              "index": 0
+            },
+            {
+              "object": "=text",
+              "action": "insert",
+              "text": "={{ $json.Workshop_Venue }}",
+              "index": 0
+            },
+            {
+              "object": "=text",
+              "action": "insert",
+              "text": "={{ $json.Workshop_Objective }}",
+              "index": 0
+            },
+            {
+              "object": "=text",
+              "action": "insert",
+              "text": "={{ $json.Workshop_Department }}",
+              "index": 0
+            },
+            {
+              "object": "=text",
+              "action": "insert",
+              "text": "={{ $json.Workshop_Speaker }}",
+              "index": 0
+            },
+            {
+              "object": "=text",
+              "action": "insert",
+              "text": "={{ $json.ur_place }}",
+              "index": 0
+            },
+            {
+              "object": "=text",
+              "action": "insert",
+              "text": "={{ $json.College_Name }}",
+              "index": 0
+            }
+          ]
+        }
+      },
+      "id": "9501cf94-13bb-40ca-9f59-b29acfcf1c82",
+      "name": "Letter_Approval_Template",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        -3640,
+        -620
+      ],
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "QHXecnVw84f5MKGq",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9a387d71-ba5b-45e3-aeb5-55f84ac6eee6",
+              "name": "Workshop_Title",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Title }}",
+              "type": "string"
+            },
+            {
+              "id": "02e9dea5-f3c8-4337-a00a-e4f841b10594",
+              "name": "Organizer_Name",
+              "value": "={{ $('Workshop_Details').item.json.Organizer_Name }}",
+              "type": "string"
+            },
+            {
+              "id": "85e3a361-5ac6-4024-88ca-e8e78d8234e6",
+              "name": " Organizer_Email",
+              "value": "={{ $('Workshop_Details').item.json[\" Organizer_Email\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "50952081-bc9c-4b20-94ee-61c340024e0a",
+              "name": "Workshop_Date",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Date }}",
+              "type": "string"
+            },
+            {
+              "id": "a66e6e7e-28d8-421b-a736-668dc0c9c3a8",
+              "name": "Workshop_Time",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Time }}",
+              "type": "string"
+            },
+            {
+              "id": "cc0d61cf-038d-4307-9d1a-f885803b4f15",
+              "name": "Workshop_Venue",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Venue }}",
+              "type": "string"
+            },
+            {
+              "id": "0db02a1d-6185-4c5f-aa85-976e53035b66",
+              "name": "Workshop_Objective",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Objective }}",
+              "type": "string"
+            },
+            {
+              "id": "28132cb6-cad8-4a63-9eec-2d01b6910b55",
+              "name": "Workshop_Department",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Department }}",
+              "type": "string"
+            },
+            {
+              "id": "1421b5e6-3488-4914-846c-48d0d483ef33",
+              "name": "Workshop_Speaker",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Speaker }}",
+              "type": "string"
+            },
+            {
+              "id": "edf08ddd-028c-4311-b109-4a8e6cefb6a5",
+              "name": "ur_place",
+              "value": "={{ $('Workshop_Details').item.json.ur_place }}",
+              "type": "string"
+            },
+            {
+              "id": "0e6bf2c0-7d55-4181-b892-f6973e2f9189",
+              "name": "College_Name",
+              "value": "={{ $('Workshop_Details').item.json.College_Name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0cbf7b8f-4a78-42d6-82d5-ce4a73ee5658",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3360,
+        -620
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "sendTo": "vardhineedinandini@gmail.com",
+        "subject": "=Approval Request - {{ $json.Workshop_Title }}",
+        "message": "=To \nThe Principal \n{{ $json[\"College_Name\"] }}\n{{ $json[\"ur_place\"] }}\n\nSubject: Request for Approval to Organize a Workshop\n\nRespected Sir/Madam,\n\nI am writing to respectfully seek your kind approval to conduct a workshop titled {{ $json[\"Workshop_Title\"] }}, which is proposed to be held on {{ $json[\"Workshop_Date\"] }} from {{ $json[\"Workshop_Time\"] }}.\n\nThe primary objective of this workshop is to {{ $json[\"Workshop_Objective\"] }}, aiming to benefit students by enhancing their knowledge and preparing them for real-world challenges.\n\nThis session will be organized by {{ $json[\"Organizer_Name\"] }} from the {{ $json[\"Workshop_Department\"] }} department and will feature {{ $json[\"Workshop_Speaker\"] }} as the keynote speaker.\n\nWe kindly request your permission to host this workshop at {{ $json[\"Workshop_Venue\"] }}. Your approval would greatly support us in executing this event successfully and contribute meaningfully to the academic environment.\n\nThank you for considering our request. We shall proceed with further arrangements upon receiving your esteemed consent.\n\nWith sincere regards, {{ $json[\"Organizer_Name\"] }}\nEmail: {{ $json[\" Organizer_Email\"] }}",
+        "options": {}
+      },
+      "id": "e3b74fe8-0ad1-430f-92b7-08f53475df7e",
+      "name": "Send Email and wait for response",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -3160,
+        -620
+      ],
+      "webhookId": "9ab1442c-574a-4c08-9104-8abfedb6e412",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5OzIqRYZGzNBjz37",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "replaceText",
+        "presentationId": "1HrFTvwXjTO28nK1sa4LD6pz6jyxxyIr722giR5Kngx8",
+        "textUi": {
+          "textValues": [
+            {
+              "matchCase": true,
+              "pageObjectIds": [
+                "p"
+              ],
+              "text": "Workshop Title",
+              "replaceText": "AI Automation1"
+            },
+            {
+              "matchCase": true,
+              "pageObjectIds": [
+                "p"
+              ],
+              "text": "Date",
+              "replaceText": "10-07-2025"
+            },
+            {
+              "matchCase": true,
+              "pageObjectIds": [
+                "p"
+              ],
+              "text": "Venue_plac",
+              "replaceText": "Lab 23025"
+            },
+            {
+              "matchCase": true,
+              "pageObjectIds": [
+                "p"
+              ],
+              "text": "Registration Link",
+              "replaceText": "https://docs.google.com/presentatio"
+            },
+            {
+              "matchCase": true,
+              "pageObjectIds": [
+                "p"
+              ],
+              "text": "organizer_name",
+              "replaceText": "V.Nandini"
+            },
+            {
+              "matchCase": true,
+              "pageObjectIds": [
+                "p"
+              ],
+              "text": "organizer_no",
+              "replaceText": "1234567"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dfb8c6a8-a7f6-484a-8f73-ffbd51dd3b04",
+      "name": "Poster_Making",
+      "type": "n8n-nodes-base.googleSlides",
+      "typeVersion": 2,
+      "position": [
+        -2880,
+        -620
+      ],
+      "credentials": {
+        "googleSlidesOAuth2Api": {
+          "id": "VBs4CHEanCYw4xyP",
+          "name": "Google Slides account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "185YsvdCeU6Voc498lzOt0GAylhRQjomllAFBa3WJmRc",
+          "mode": "list",
+          "cachedResultName": "WorkshopParticipates",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/185YsvdCeU6Voc498lzOt0GAylhRQjomllAFBa3WJmRc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/185YsvdCeU6Voc498lzOt0GAylhRQjomllAFBa3WJmRc/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email ": "usersasi67@gmail.com",
+            "college": "SITE",
+            "Department ": "CIC",
+            "Contact": "9011111111",
+            "Name": "NICK"
+          },
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "type": "string"
+            },
+            {
+              "id": "Email ",
+              "displayName": "Email ",
+              "type": "string"
+            },
+            {
+              "id": "college",
+              "displayName": "college",
+              "type": "string"
+            },
+            {
+              "id": "Department ",
+              "displayName": "Department ",
+              "type": "string"
+            },
+            {
+              "id": "Contact",
+              "displayName": "Contact",
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "4223be39-0fea-4f41-87f6-d66d9e527219",
+      "name": "Participates_List",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -2540,
+        -620
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "abJKFSlmwtfA9dua",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "73c16860-9585-45d3-a971-4c15fc5a9808",
+              "name": "Name",
+              "value": "={{ $json.Name }}",
+              "type": "string"
+            },
+            {
+              "id": "064d1d80-ccb2-49cb-b372-ae82e9e6a5a9",
+              "name": "Email ",
+              "value": "={{ $json[\"Email \"] }}",
+              "type": "string"
+            },
+            {
+              "id": "091fd734-0a5d-4f89-aba5-8041dd4d7fe6",
+              "name": "college",
+              "value": "={{ $json.college }}",
+              "type": "string"
+            },
+            {
+              "id": "27e16493-355f-424b-8b0e-79004e5afc67",
+              "name": "Department ",
+              "value": "={{ $json[\"Department \"] }}",
+              "type": "string"
+            },
+            {
+              "id": "4e9c6890-293d-40da-83e0-bf466f3f1a6c",
+              "name": "Contact",
+              "value": "={{ $json.Contact }}",
+              "type": "string"
+            },
+            {
+              "id": "b4eab6c1-73b6-474a-87e3-0a350e5bc94f",
+              "name": "Workshop_Title",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Title }}",
+              "type": "string"
+            },
+            {
+              "id": "e33659a6-a986-42ab-a9f6-bc0e68631882",
+              "name": "Workshop_Date",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Date }}",
+              "type": "string"
+            },
+            {
+              "id": "2121be0c-af44-4477-a7f3-9d1ed8615f3d",
+              "name": "Workshop_Time",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Time }}",
+              "type": "string"
+            },
+            {
+              "id": "7d90aad0-826f-408f-a014-fcd92837f467",
+              "name": "Workshop_Venue",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Venue }}",
+              "type": "string"
+            },
+            {
+              "id": "6429d49a-e7d8-4a48-9b6f-f32770d2d51b",
+              "name": "Workshop_Objective",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Objective }}",
+              "type": "string"
+            },
+            {
+              "id": "8a49036c-ab25-4181-843f-0d031d996358",
+              "name": "Workshop_Speaker",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Speaker }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6f5c8395-b9f7-405d-b8d6-cd3f7abcaea7",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2120,
+        -620
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json[\"Email \"] }}",
+        "subject": "=Thanks for registering for {{ $json[\"Workshop Title\"] }}",
+        "emailType": "text",
+        "message": "=Hi {{ $json[\"Name\"] }},\n\nThank you for registering for our workshop titled {{ $json[\"Workshop_Title\"] }}. We are excited to welcome you to this event and look forward to your participation.\n\n📅 Date: {{ $json[\"Workshop_Date\"] }} \n⏰ Time: {{ $json[\"Workshop_Time\"] }} \n📍 Venue: {{ $json[\"Workshop_Venue\"] }}\n\nThe session will feature {{ $json[\"Workshop_Speaker\"] }} who will be sharing insightful knowledge on the topic. We believe this workshop will offer a valuable experience and enriching learning.\n\nBest regards,\nWorkshop Team",
+        "options": {}
+      },
+      "id": "5fe86afe-454b-49e1-b619-58b3033f7f24",
+      "name": "Send a message",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -1800,
+        -620
+      ],
+      "webhookId": "644ee0ce-6c4b-4e32-9fe3-d12bb951e130",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5OzIqRYZGzNBjz37",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c5b0ba65-cc6c-46d3-9bd9-fb3cadb57192",
+              "name": "Workshop_Title",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Title }}",
+              "type": "string"
+            },
+            {
+              "id": "2227d0de-be8f-4475-aeb7-862cc9388306",
+              "name": "Organizer_Name",
+              "value": "={{ $('Workshop_Details').item.json.Organizer_Name }}",
+              "type": "string"
+            },
+            {
+              "id": "f3496558-f87d-46fe-9e88-9b0a02c42c04",
+              "name": " Organizer_Email",
+              "value": "={{ $('Workshop_Details').item.json[\" Organizer_Email\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "0817ea3c-375a-4482-b354-78b2274a2e55",
+              "name": "Workshop_Date",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Date }}",
+              "type": "string"
+            },
+            {
+              "id": "8fd5ae53-556c-4f76-83af-6d4d0c375745",
+              "name": "Workshop_Time",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Time }}",
+              "type": "string"
+            },
+            {
+              "id": "9d80d467-8f48-4fc1-b499-055120bb174d",
+              "name": "Workshop_Venue",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Venue }}",
+              "type": "string"
+            },
+            {
+              "id": "0b301c6f-9274-4eed-9b73-7ac0bd5b7087",
+              "name": "Workshop_Objective",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Objective }}",
+              "type": "string"
+            },
+            {
+              "id": "6f2bd934-cab3-411e-84e2-969d28dae89e",
+              "name": "Workshop_Department",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Department }}",
+              "type": "string"
+            },
+            {
+              "id": "be61ac01-c5ee-4838-b876-c669da8883d7",
+              "name": "Workshop_Speaker",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Speaker }}",
+              "type": "string"
+            },
+            {
+              "id": "4a388344-0750-41f2-a08e-c0504ee972c8",
+              "name": "ur_place",
+              "value": "={{ $('Workshop_Details').item.json.ur_place }}",
+              "type": "string"
+            },
+            {
+              "id": "6644f763-15b5-46b4-bd0f-94866bb15e7c",
+              "name": "College_Name",
+              "value": "={{ $('Workshop_Details').item.json.College_Name }}",
+              "type": "string"
+            },
+            {
+              "id": "28e0e340-5ee7-4e1a-aee0-11c2ab7f95eb",
+              "name": "Workshop_Speaker_Email",
+              "value": "={{ $('Workshop_Details').item.json.Workshop_Speaker_Email }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4c431a8f-e190-4da8-8a2a-24a8026395ce",
+      "name": "Edit Fields2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1780,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Workshop_Details').item.json.Workshop_Speaker_Email }}",
+        "subject": "=Friendly Reminder: Workshop on {{ $json[\"Workshop_Title\"] }} – {{ $json[\"Workshop_Date\"] }}",
+        "emailType": "text",
+        "message": "=To {{ $json[\"Workshop_Speaker\"] }} \n{{ $json[\"Workshop_Speaker_Email\"] }} \nSubject: Reminder: Upcoming Workshop – {{ $json[\"Workshop_Title\"] }} \nRespected {{ $json[\"Workshop_Speaker\"] }}, \n This is a kind reminder regarding the upcoming workshop titled {{ $json[\"Workshop_Title\"] }}, scheduled on {{ $json[\"Workshop_Date\"] }}, from {{ $json[\"Workshop_Time\"] }}, to be held at {{ $json[\"Workshop_Venue\"] }}, {{ $json[\"College_Name\"] }}, {{ $json[\"ur_place\"] }}. We are very much looking forward to your keynote session, and we deeply appreciate your willingness to share your expertise with our students. The objective of this workshop is to {{ $json[\"Workshop_Objective\"] }}, and your contribution will undoubtedly add immense value to the event. Should you have any special requirements, or if there’s anything we can assist with before the event, please feel free to contact us at {{ $json[\" Organizer_Email\"] }}. Thank you once again for your gracious support. We are excited to welcome you to our campus. Warm regards, {{ $json[\"Organizer_Name\"] }} Workshop Organizer {{ $json[\"Workshop_Department\"] }} Department {{ $json[\"College_Name\"] }} Email: {{ $json[\" Organizer_Email\"] }}",
+        "options": {}
+      },
+      "id": "d5520d83-1b0e-4a45-a017-ede57338455f",
+      "name": "Send a message1",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -2080,
+        -180
+      ],
+      "webhookId": "63ab838e-5eff-4b27-abaa-dfd21dc1dc52",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5OzIqRYZGzNBjz37",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "workshop-attendance",
+        "options": {}
+      },
+      "id": "31689e35-977d-41fc-958d-943ad6ced572",
+      "name": "Attendance_QR_Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -3840,
+        -140
+      ],
+      "webhookId": "389cebb0-5d55-41e9-9baf-fcd0816bb2d3"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1oYqWb5g1tsxoejknZqI1P_zbBFGxusLuGhdCHnaPXW8",
+          "mode": "list",
+          "cachedResultName": "Attendence Track",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oYqWb5g1tsxoejknZqI1P_zbBFGxusLuGhdCHnaPXW8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1oYqWb5g1tsxoejknZqI1P_zbBFGxusLuGhdCHnaPXW8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Name": "Nick",
+            "Email": "usersasi67@gmail.com"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "284a97cb-cc0c-4b9b-a1ec-6a8e441e5e7a",
+      "name": "Append_Attendance",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        -2400,
+        -180
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "abJKFSlmwtfA9dua",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "replaceText",
+        "presentationId": "14gmc3e-FyR-TF5xuBb3psJYT988EzTANmZExPzXFhbA",
+        "textUi": {
+          "textValues": [
+            {
+              "matchCase": true,
+              "pageObjectIds": [
+                "gc6f9fe735_0_0"
+              ],
+              "text": "=NAME",
+              "replaceText": "={{ $('Participates_List').item.json.Name }}"
+            },
+            {
+              "matchCase": true,
+              "pageObjectIds": [
+                "gc6f9fe735_0_0"
+              ],
+              "text": "WorkShop_Title",
+              "replaceText": "={{ $('Workshop_Details').item.json.Workshop_Title }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d4600f35-3eee-466f-b134-c0cb4a6ecd25",
+      "name": "Create Certificate",
+      "type": "n8n-nodes-base.googleSlides",
+      "typeVersion": 2,
+      "position": [
+        -2720,
+        -160
+      ],
+      "credentials": {
+        "googleSlidesOAuth2Api": {
+          "id": "VBs4CHEanCYw4xyP",
+          "name": "Google Slides account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": "={{ $('Create Certificate').item.json.presentationId }}",
+        "options": {}
+      },
+      "id": "bf9759ea-cb0b-4a0f-8af1-08e235f107f3",
+      "name": "Download Certificate as PDF",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 2,
+      "position": [
+        -3060,
+        -160
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "mDTBhs3baCLePQdB",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Append_Attendance').item.json.Email }}",
+        "subject": "=Your Certificate for {{ $('Workshop_Details').item.json.Workshop_Title }}",
+        "emailType": "text",
+        "message": "=Hi {{ $('Append_Attendance').item.json.Name }},\n\nThank you for attending the workshop titled {{ $('Workshop_Details').item.json.Workshop_Title }} held on {{ $('Workshop_Details').item.json.Workshop_Date }}. We hope you found the session engaging and informative.\n\n🎓 We are pleased to share your participation certificate with you. Please find it attached to this email.\n\nIf you have any questions or would like to stay updated about future workshops, feel free to reach out.\n\nBest regards, Workshop Team",
+        "options": {
+          "attachmentsUi": {
+            "attachmentsBinary": [
+              {}
+            ]
+          }
+        }
+      },
+      "id": "d5e8f5ea-0e09-482f-bd9e-3cfbddfa7ea0",
+      "name": "Send Certificate",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        -3400,
+        -160
+      ],
+      "webhookId": "86ecd287-e671-4496-ba4f-67a865a24f97",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5OzIqRYZGzNBjz37",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        []
+      ]
+    },
+    "Workshop_Details": {
+      "main": [
+        [
+          {
+            "node": "Letter_Approval_Template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Letter_Approval_Template": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send Email and wait for response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email and wait for response": {
+      "main": [
+        [
+          {
+            "node": "Poster_Making",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Poster_Making": {
+      "main": [
+        [
+          {
+            "node": "Participates_List",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Participates_List": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Attendance_QR_Webhook": {
+      "main": [
+        []
+      ]
+    },
+    "Append_Attendance": {
+      "main": [
+        [
+          {
+            "node": "Create Certificate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message1": {
+      "main": [
+        [
+          {
+            "node": "Append_Attendance",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Certificate": {
+      "main": [
+        [
+          {
+            "node": "Download Certificate as PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Certificate as PDF": {
+      "main": [
+        [
+          {
+            "node": "Send Certificate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "bd0a7115-3d99-4fe5-b18b-28a340db18ad",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d63ad28e395d406cfe8f4d465900517f486d1c921b1f170c8c331950220ddcdd"
+  },
+  "id": "sf6T7V3UPWXgQSLD",
+  "tags": []
+}
